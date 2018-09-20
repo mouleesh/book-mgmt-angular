@@ -1,0 +1,5 @@
+<p>
+  <li *ngFor = "let comment of comments">{{comment.description}}</li>
+  <textarea [(ngModel)]="newComment" placeholder="Please enter your comments"></textarea>
+  <button (click)="AddComment(bookId)">Add Comment</button>
+</p>
