@@ -1,0 +1,99 @@
+header{
+    height: 75px;
+    background-color: dimgray;
+    color: azure;
+    min-width: inherit;
+}
+
+.app-logo {
+    padding: 0;
+    margin: 7px;
+    height: 60px;
+    float: left;
+    max-width: 300px;
+}
+
+
+.fa-bars{
+    width: 55px ;
+    height: 40px ;
+    font-size: 41px;
+    padding: 7px 7px 0 0;
+    text-align: center;
+    margin: 8px 0 ;
+    color:cadetblue;
+    background-color: dimgray ;
+}
+
+.fa-sign-out-alt{
+    width: 46px;
+    height: 30px;
+    color: cadetblue;
+    background-color: dimgray;
+    cursor: pointer;
+    text-align: center;
+    font-size: 24px;
+}
+
+
+.dropdown {
+  position: relative;
+  display: none;
+  float: right;
+}
+
+
+.dropdown-content {
+  display: none;
+  position: absolute;
+  right: 1%;
+  background-color: cadetblue;
+  border-radius: 5px;
+  min-width: 160px;
+  box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+  z-index: 1;
+  text-align: center;
+}
+
+.dropdown-content a {
+  padding: 10px 16px;
+  display: block;
+  cursor: pointer;
+}
+
+.dropdown-content a:hover {
+    border-radius: 0 0 5px 5px;
+}
+
+.dropdown-content b {
+  display: block;
+  margin: 10px;
+}
+
+.logged-user-detail{
+  display: block;  
+  position: relative;
+  float: right;
+  margin: 22px 0;
+  font-size: 20px;
+}
+
+.dropdown-content p {
+padding: 10px 16px;
+display: block;
+border-bottom: 1px solid rgba(0,0,0,.1);
+}
+
+.dropdown-content a:hover {background-color: rgb(129, 129, 129);}
+
+.dropdown:hover .dropdown-content {display: block;}
+
+@media screen and (max-width: 550px){
+  .dropdown{
+      display: block;
+  }
+
+  .logged-user-detail{
+      display: none;
+  }
+}

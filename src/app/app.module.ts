@@ -8,6 +8,8 @@ import { BookService } from './service/book/book.service';
 import { SharedModule } from './shared/shared.module';
 import { LoginComponent } from './login/login.component';
 import { DashboardComponent } from './dashboard/dashboard.component';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { MessageService } from 'primeng/api';
 
 @NgModule({
   declarations: [
@@ -18,9 +20,10 @@ import { DashboardComponent } from './dashboard/dashboard.component';
   imports: [
     BrowserModule,
     RoutingModule,
-    SharedModule
+    SharedModule,
+    BrowserAnimationsModule
   ],
-  providers: [ UserService, BookService],
-  bootstrap: [ AppComponent ]
+  providers: [UserService, BookService, MessageService],
+  bootstrap: [AppComponent]
 })
 export class AppModule { }

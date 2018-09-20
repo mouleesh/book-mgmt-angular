@@ -243,4 +243,17 @@ export const bookDetails = [
     author: "Rick Riordan",
     description: "​Readers’ advisors around the world know: horror is having a moment. Well, more than a moment; it is red hot. But why? It might have something to do with our uncertain times.",
   }
-]
+];
+
+export const toastData = {
+  loginSuccess : {
+    severity:'success', 
+    summary: 'Login Successful', 
+    detail:'Welcome to Library Management'
+  },
+  loginError : {
+    severity:'error', 
+    summary: 'Invalid Credentials', 
+    detail:'Ensure your username/password is correct'
+  }
+}
