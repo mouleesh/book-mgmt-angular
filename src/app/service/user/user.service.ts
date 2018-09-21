@@ -3,20 +3,21 @@ import { loginDetails, userDetails } from '../../../constant';
 import { Subject } from 'rxjs';
 import { Router } from '@angular/router';
 
+
 @Injectable({
   providedIn: 'root'
 })
 export class UserService {
 
-  private logged : string;
-
+  private logged: string;
+  private userDetails: Array<any>;
   userLogged = new Subject<string>();
 
-  constructor( private router:Router) {
+  constructor(private router: Router) {
     this.logged = null;
   }
 
-  public checkUser = (username: string) =>{
+  public checkUser = (username: string) => {
 
     const user = this.getUserArray(username);
 
@@ -24,20 +25,19 @@ export class UserService {
   }
 
 
-  public login = ({username , password}) => {
+  public login = ({ username, password }) => {
     const user = this.getUserArray(username)[0];
 
-    if(user.password === password){
+    if (user.password === password) {
       this.logged = username;
       this.userLogged.next(this.logged);
       return true;
     } else {
       return false;
     }
-  } 
+  }
 
   public logOut = () => {
-    console.log("logout")
     this.logged = null;
     this.userLogged.next(this.logged);
     this.router.navigateByUrl("/");
@@ -47,9 +47,9 @@ export class UserService {
     return this.logged;
   }
 
-  public getFullName = (username:string)=>{
+  public getFullName = (username: string) => {
     let userdetails;
-    if(this.checkUser(username)){
+    if (this.checkUser(username)) {
       userdetails = userDetails.filter((user) => {
         return user.username === username;
       })[0];
@@ -63,5 +63,18 @@ export class UserService {
     return loginDetails.filter((user) => {
       return user.username === username;
     });
+
+  }
+  public getUserFavourites = () => {
+    let userdetails;
+    if (this.checkUser(this.logged)) {
+      userdetails = userDetails.filter((user) => {
+        return user.username === this.logged;
+      })[0];
+
+      return userdetails.likedBooks;
+    } else {
+      return null;
+    }
   }
 }
