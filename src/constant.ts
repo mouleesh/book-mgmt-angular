@@ -246,14 +246,14 @@ export const bookDetails = [
 ];
 
 export const toastData = {
-  loginSuccess : {
-    severity:'success', 
-    summary: 'Login Successful', 
-    detail:'Welcome to Library Management'
+  loginSuccess: {
+    severity: 'success',
+    summary: 'Login Successful',
+    detail: 'Welcome to Library Management'
   },
-  loginError : {
-    severity:'error', 
-    summary: 'Invalid Credentials', 
-    detail:'Ensure your username/password is correct'
+  loginError: {
+    severity: 'error',
+    summary: 'Invalid Credentials',
+    detail: 'Ensure your username/password is correct'
   }
 }

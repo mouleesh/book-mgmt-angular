@@ -11,11 +11,13 @@ export class UserService {
 
   private logged: string;
 
+  private userDetailsList: any[];
   /**The User `Subject` through which the username after login is Obtained */
   userLogged = new Subject<string>();
 
   constructor(private router: Router) {
     this.logged = null;
+    this.userDetailsList = userDetails;
   }
 
   /**
@@ -48,7 +50,6 @@ export class UserService {
    * LogOut function.
    */
   public logOut = () => {
-    console.log("logout")
     this.logged = null;
     this.userLogged.next(this.logged);
     this.router.navigateByUrl("/");
@@ -68,13 +69,13 @@ export class UserService {
    * @returns string.
    */
   public getFullName = (username: string) => {
-    let userdetails;
+    let userDetails;
     if (this.checkUser(username)) {
-      userdetails = userDetails.filter((user) => {
+      userDetails = this.userDetailsList.filter((user) => {
         return user.username.toLowerCase() === username.toLowerCase();
       })[0];  // this is an IE fix
 
-      return userdetails.fullName;
+      return userDetails.fullName;
     } else {
       return null;
     }
@@ -89,5 +90,18 @@ export class UserService {
     return loginDetails.filter((user) => {
       return user.username === username;
     });
+
+  }
+  public getUserFavourites = () => {
+    let userDetails;
+    if (this.checkUser(this.logged)) {
+      userDetails = this.userDetailsList.filter((user) => {
+        return user.username === this.logged;
+      })[0];
+
+      return userDetails.likedBooks;
+    } else {
+      return null;
+    }
   }
 }

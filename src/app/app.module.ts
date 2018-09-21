@@ -1,10 +1,10 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
-
 import { AppComponent } from './app.component';
 import { RoutingModule } from './routing/routing.module';
 import { UserService } from './service/user/user.service';
 import { BookService } from './service/book/book.service';
+import { AuthGuardService } from './service/auth/auth-guard.service';
 import { SharedModule } from './shared/shared.module';
 import { LoginComponent } from './login/login.component';
 import { DashboardComponent } from './dashboard/dashboard.component';
@@ -15,7 +15,7 @@ import { MessageService } from 'primeng/api';
   declarations: [
     AppComponent,
     LoginComponent,
-    DashboardComponent
+    DashboardComponent,
   ],
   imports: [
     BrowserModule,
@@ -23,7 +23,7 @@ import { MessageService } from 'primeng/api';
     SharedModule,
     BrowserAnimationsModule
   ],
-  providers: [UserService, BookService, MessageService],
+  providers: [UserService, BookService, MessageService, AuthGuardService],
   bootstrap: [AppComponent]
 })
 /**Root Module*/

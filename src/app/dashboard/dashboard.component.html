@@ -1,3 +1,15 @@
-<p>
-  dashboard works!
-</p>
+<div class="container-fluid">
+  <div class="row">
+    <div class="col-sm-6">
+      <h2>Books In Store</h2>
+      <mat-form-field class="example-full-width">
+        <input [(ngModel)]="searchText" matInput placeholder="Search Books">
+      </mat-form-field>
+      <app-book-list [books]="bookList" [query]="searchText"></app-book-list>
+    </div>
+    <div class="col-sm-6">
+      <app-favourite-book-list [isFavAvail]="isFavAvail" [favBooks]="favouriteBooks"></app-favourite-book-list>
+       <p-chart type="horizontalBar" [data]="data"></p-chart>
+    </div>
+  </div>
+</div>
