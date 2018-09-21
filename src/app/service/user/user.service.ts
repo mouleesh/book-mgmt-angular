@@ -90,8 +90,8 @@ export class UserService {
     return loginDetails.filter((user) => {
       return user.username === username;
     });
-
   }
+
   public getUserFavourites = () => {
     let userDetails;
     if (this.checkUser(this.logged)) {
@@ -103,5 +103,20 @@ export class UserService {
     } else {
       return null;
     }
+  }
+
+  public updateUserFavourites = (bookId, isLiked) => {
+    const userDetails = this.userDetailsList.filter((user) => {
+      if (user.username === this.logged) {
+        if (!isLiked) {
+          user.likedBooks.push(bookId);
+        } else {
+          user.likedBooks = user.likedBooks.filter((likedBookId) => {
+            return likedBookId !== bookId;
+          });
+        }
+      }
+      return user;
+    });
   }
 }

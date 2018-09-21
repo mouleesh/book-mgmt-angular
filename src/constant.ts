@@ -255,5 +255,10 @@ export const toastData = {
     severity: 'error',
     summary: 'Invalid Credentials',
     detail: 'Ensure your username/password is correct'
+  },
+  commentEmpty: {
+    severity: 'error',
+    summary: 'Empty message',
+    detail: 'Ensure that you have entered some comments'
   }
 }

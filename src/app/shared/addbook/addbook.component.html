@@ -1,0 +1,15 @@
+<form #addBookForm="ngForm">
+  <mat-form-field>
+    <label for="bookname">Book Name</label>
+    <input id="bookname" matInput placeholder="Book Name" required [(ngModel)]="bookName" name="bookname" />
+  </mat-form-field>
+  <mat-form-field>
+    <label for="author">Author Name</label>
+    <input id="author" matInput placeholder="Author Name" required [(ngModel)]="authorName" name="author" />
+  </mat-form-field>
+  <mat-form-field>
+    <label for="description">Description</label>
+    <input id="description" matInput placeholder="Description" required [(ngModel)]="description" name="description" />
+  </mat-form-field>
+  <button type="button" mat-raised-button (click)="addBook(); addBookForm.reset()" [disabled]="!addBookForm.valid">Add Book</button>
+</form>
