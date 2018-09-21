@@ -12,6 +12,7 @@ import { BookLikesComponent } from './book-likes/book-likes.component';
 import { FavouriteBookListComponent } from './favourite-book-list/favourite-book-list.component';
 import { FilterPipe } from '../shared/custom-pipes/filter.pipe';
 import { ChartModule } from 'primeng/chart';
+import { RoutingModule } from '../routing/routing.module';
 
 @NgModule({
   imports: [
@@ -19,7 +20,8 @@ import { ChartModule } from 'primeng/chart';
     AngularMaterialsModule,
     BrowserAnimationsModule,
     FormsModule,
-    ChartModule
+    ChartModule,
+    RoutingModule
   ],
   exports: [
     BookListComponent,
@@ -35,7 +37,8 @@ import { ChartModule } from 'primeng/chart';
     BrowserAnimationsModule,
     ToastModule,
     FormsModule,
-    ChartModule
+    ChartModule,
+    RoutingModule
   ],
   declarations: [BookComponent,
     BookListComponent,

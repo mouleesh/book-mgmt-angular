@@ -11,10 +11,13 @@ export class UserService {
 
   private logged: string;
   private userDetails: Array<any>;
+  private userDetailsList: any[];
+
   userLogged = new Subject<string>();
 
   constructor(private router: Router) {
     this.logged = null;
+    this.userDetailsList = userDetails;
   }
 
   public checkUser = (username: string) => {
@@ -47,24 +50,26 @@ export class UserService {
     return this.logged;
   }
 
+
   public getFullName = (username: string) => {
-    let userdetails;
+    let userDetails;
     if (this.checkUser(username)) {
-      userdetails = userDetails.filter((user) => {
+      userDetails = this.userDetailsList.filter((user) => {
         return user.username === username;
       })[0];
 
-      return userdetails.fullName;
+      return userDetails.fullName;
     } else {
       return null;
     }
   }
+
   private getUserArray(username: string) {
     return loginDetails.filter((user) => {
       return user.username === username;
     });
-
   }
+
   public getUserFavourites = () => {
     let userdetails;
     if (this.checkUser(this.logged)) {
@@ -76,5 +81,20 @@ export class UserService {
     } else {
       return null;
     }
+  }
+
+  public updateUserFavourites = (bookId, isLiked) => {
+    const userDetails = this.userDetailsList.filter((user) => {
+      if (user.username === this.logged) {
+        if (!isLiked) {
+          user.likedBooks.push(bookId);
+        } else {
+          user.likedBooks = user.likedBooks.filter((likedBookId) => {
+            return likedBookId !== bookId;
+          });
+        }
+      }
+      return user;
+    });
   }
 }

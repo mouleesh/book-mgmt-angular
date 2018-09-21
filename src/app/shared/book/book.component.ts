@@ -1,4 +1,5 @@
 import { Component,Input, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-book',
@@ -8,7 +9,7 @@ import { Component,Input, OnInit } from '@angular/core';
 export class BookComponent implements OnInit {
   @Input() book;
   
-  constructor() { }
+  constructor(private router:Router) { }
   ngOnInit() {}
   
 }

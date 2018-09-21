@@ -42,20 +42,30 @@ export class BookService {
     return this.bookDetails;
   }
 
-  public addComment(bookId, commentText): void{
+  public addComment(bookId, comment): void{
     const updatedBookDetail = this.bookDetails.map((bookDetail) => {
       if(bookDetail.bookId == bookId){
-        const newComment: Comment = {
-          description: commentText,
-          username: 'asdf',
-          commentedAt: 'asdf'
-        };
-        bookDetail.comments.push(newComment);
+        
+        bookDetail.comments.push(comment);
       }
       return bookDetail;
     });
     
     this.bookList.next(updatedBookDetail);
   }
+
+  public updateLike(bookId, isLiked){
+    const asdf = this.bookDetails.map((bookDetail) => {
+      if(bookDetail.bookId == bookId){
+        if(!isLiked){
+          bookDetail.likes++;
+        } else {
+          bookDetail.likes--;
+        }
+      }
+      return bookDetail;
+    });
+  }
+
 }
 
