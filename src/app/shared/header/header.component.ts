@@ -1,4 +1,4 @@
-import { Component, OnInit, Input, OnDestroy } from '@angular/core';
+import { Component, OnDestroy } from '@angular/core';
 import { UserService } from '../../service/user/user.service';
 import { Subscription } from 'rxjs';
 
@@ -7,13 +7,17 @@ import { Subscription } from 'rxjs';
   templateUrl: './header.component.html',
   styleUrls: ['./header.component.css']
 })
-export class HeaderComponent implements OnInit, OnDestroy {
+/**Header Component Class */
+export class HeaderComponent implements OnDestroy {
 
-
-  username: string = null;
-  fullname: string;
+  /**username field*/
+  private username: string = null;
+  /**Fullname field*/
+  private fullname: string;
+  /**subcription to store the observable subscription*/
   subscription: Subscription;
 
+  /**constructor with subscription to username from `UserService` */
   constructor(private userService: UserService) {
     this.subscription = this.userService.userLogged.subscribe((username) => {
       this.username = username;
@@ -21,13 +25,12 @@ export class HeaderComponent implements OnInit, OnDestroy {
     });
   }
 
+  /**function to perform logout */
   logOut() {
     this.userService.logOut();
   }
 
-  ngOnInit() {
-  }
-
+  /**the sunscription is unsubscribed at when component is destroyed */
   ngOnDestroy() {
     this.subscription.unsubscribe();
   }

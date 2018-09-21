@@ -3,39 +3,50 @@ import { loginDetails, userDetails } from '../../../constant';
 import { Subject } from 'rxjs';
 import { Router } from '@angular/router';
 
+/** Service for User Related Queries */
 @Injectable({
   providedIn: 'root'
 })
 export class UserService {
 
-  private logged : string;
+  private logged: string;
 
+  /**The User `Subject` through which the username after login is Obtained */
   userLogged = new Subject<string>();
 
-  constructor( private router:Router) {
+  constructor(private router: Router) {
     this.logged = null;
   }
 
-  public checkUser = (username: string) =>{
-
-    const user = this.getUserArray(username);
-
-    return user.length > 0;
+  /**
+   * Checks whether a user is present or not.
+   * @param username string.
+   * @returns boolean
+   */
+  public checkUser = (username: string) => {
+    return this.getUserArray(username).length > 0;
   }
 
-
-  public login = ({username , password}) => {
+  /**
+   * Login function.
+   * @param { username: string, password: string}.
+   * @returns boolean
+   */
+  public login = ({ username, password }) => {
     const user = this.getUserArray(username)[0];
 
-    if(user.password === password){
+    if (user.password === password) {
       this.logged = username;
       this.userLogged.next(this.logged);
       return true;
     } else {
       return false;
     }
-  } 
+  }
 
+  /**
+   * LogOut function.
+   */
   public logOut = () => {
     console.log("logout")
     this.logged = null;
@@ -43,22 +54,37 @@ export class UserService {
     this.router.navigateByUrl("/");
   }
 
+  /**
+   * Provides the logged username.
+   * @returns string
+   */
   public getLoggedUser = () => {
     return this.logged;
   }
 
-  public getFullName = (username:string)=>{
+  /**
+   * Provides the fullName of the user.
+   * @param username string.
+   * @returns string.
+   */
+  public getFullName = (username: string) => {
     let userdetails;
-    if(this.checkUser(username)){
+    if (this.checkUser(username)) {
       userdetails = userDetails.filter((user) => {
-        return user.username === username;
-      })[0];
+        return user.username.toLowerCase() === username.toLowerCase();
+      })[0];  // this is an IE fix
 
       return userdetails.fullName;
     } else {
       return null;
     }
   }
+
+  /**
+   * Returns the user object of username within a `Array`.
+   * @param username string.
+   * @returns array.
+   */
   private getUserArray(username: string) {
     return loginDetails.filter((user) => {
       return user.username === username;

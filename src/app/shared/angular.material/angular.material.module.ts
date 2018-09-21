@@ -15,4 +15,5 @@ import { MatInputModule } from '@angular/material/input';
     MatButtonModule
   ]
 })
+/**Module which provides the Angular Material Components */
 export class AngularMaterialModule { }

@@ -26,4 +26,5 @@ import { MessageService } from 'primeng/api';
   providers: [UserService, BookService, MessageService],
   bootstrap: [AppComponent]
 })
+/**Root Module*/
 export class AppModule { }

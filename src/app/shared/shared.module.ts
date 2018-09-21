@@ -29,4 +29,5 @@ import { ToastModule } from 'primeng/toast';
     ToastModule
   ]
 })
+/**SharedModule consists of common reusable components and module */
 export class SharedModule { }
