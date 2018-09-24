@@ -14,6 +14,7 @@ export class BookDetailsComponent implements OnInit {
   bookDetail: BookDetail;
   loggedUserlikedBooks: Array<object> = [];
   isCurrentBookLiked: Boolean; 
+  imageUrl: string;
 
   constructor(private route: ActivatedRoute, private bookService: BookService, private userService: UserService) { }
 
@@ -21,12 +22,13 @@ export class BookDetailsComponent implements OnInit {
     this.getBookDetails();
 
     this.isCurrentBookLiked = this.checkIsCurrentBookLiked();
+    this.imageUrl = "https://loremflickr.com/320/240/book";
   }
 
   checkIsCurrentBookLiked(){
     this.loggedUserlikedBooks = this.userService.getUserFavourites();
     
-    let matchedBookIds = this.loggedUserlikedBooks.filter((bookId) => {
+    let matchedBookIds = this.loggedUserlikedBooks.filter((bookId: any) => {
       return bookId === this.bookDetail.bookId;
     });
 
