@@ -1,15 +1,32 @@
-<div class="container-fluid">
-  <div class="row">
-    <div class="col-sm-6">
-      <h2>Books In Store</h2>
-      <mat-form-field class="example-full-width">
-        <input [(ngModel)]="searchText" matInput placeholder="Search Books">
-      </mat-form-field>
-      <app-book-list [books]="bookList" [query]="searchText"></app-book-list>
+<div class="container-fluid main-content">
+    <div class="row">
+        <div class="col-sm-6">
+            <h2>Books In Store</h2>
+            <mat-form-field class="example-full-width">
+                <input [(ngModel)]="searchText" matInput placeholder="Search Books">
+            </mat-form-field>
+            <app-book-list [books]="bookList" [query]="searchText"></app-book-list>
+        </div>
+        <div class="col-sm-6">
+            <app-favourite-book-list [isFavAvail]="isFavAvail" [favBooks]="favouriteBooks"></app-favourite-book-list>
+            <p-chart type="horizontalBar" [data]="data"></p-chart>
+        </div>
     </div>
-    <div class="col-sm-6">
-      <app-favourite-book-list [isFavAvail]="isFavAvail" [favBooks]="favouriteBooks"></app-favourite-book-list>
-       <p-chart type="horizontalBar" [data]="data"></p-chart>
+    <div class="modal fade" id="bookModal" tabIndex="-1" role="dialog" aria-labelledby="addBookModal" aria-hidden="true">
+        <p-toast></p-toast>
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+                <div class="modal-header heading">
+                    <h5 class="modal-title" id="addBookModal">Add Book</h5>
+                </div>
+                <div class="modal-body">
+                    <app-addbook></app-addbook>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                </div>
+            </div>
+        </div>
     </div>
-  </div>
+    <i class="fas fa-plus-circle" data-toggle="modal" data-target="#bookModal"></i>
 </div>

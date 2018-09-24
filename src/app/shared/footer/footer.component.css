@@ -1,8 +1,8 @@
 footer{
-    position: relative;
+    position: fixed;
     width: 100%;
     min-width: inherit;
-    bottom: 0px;
+    bottom: 0;
     height: 50px;
     margin: 0px;
     background-color: dimgrey;

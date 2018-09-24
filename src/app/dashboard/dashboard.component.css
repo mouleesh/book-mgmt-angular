@@ -1,0 +1,17 @@
+.fa-plus-circle {
+  position: fixed;
+  bottom: 65px;
+  right: 3%;
+  color: #60b6c7;
+  width: 55px;
+  height: 50px;
+  z-index: 2;
+  font-size: 55px;
+}
+
+@media screen and (max-width: 300px) {
+  .fa-plus-circle {
+    right: 0;
+    left: 5px;
+  }
+}

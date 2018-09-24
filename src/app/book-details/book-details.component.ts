@@ -27,7 +27,7 @@ export class BookDetailsComponent implements OnInit {
     this.loggedUserlikedBooks = this.userService.getUserFavourites();
     
     let matchedBookIds = this.loggedUserlikedBooks.filter((bookId) => {
-      return bookId === this.bookDetail.bookId;
+      return bookId.toString() === this.bookDetail.bookId;
     });
 
     return matchedBookIds.length > 0;
