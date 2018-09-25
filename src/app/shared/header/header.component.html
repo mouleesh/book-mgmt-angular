@@ -1,18 +1,25 @@
 <header>
-  <img class="app-logo" src="assets/logo.png" alt="logo" />
+  <section class="logo-sec">
+    <img class="app-logo" src="assets/brand-logo.jpg" alt="logo" />
+    <span class="m-2 heading">Library Management System </span>
+  </section>
 
-  <span *ngIf="username">
+  <section *ngIf="username" class="user-info-sec">
     <div class="logged-user-detail">
       <b>{{fullname}}</b>
-      <span (click)="logOut()"><i class="fas fa-sign-out-alt"></i></span>
+      <span (click)="logOut()">
+        <i class="fas fa-sign-out-alt"></i>
+      </span>
     </div>
 
     <div class="dropdown">
-      <span><i class="fas fa-bars"></i></span>
+      <span>
+        <i class="fas fa-bars"></i>
+      </span>
       <div class="dropdown-content">
         <b>{{fullname}}</b>
         <a (click)="logOut()">SignOut</a>
       </div>
     </div>
-  </span>
+  </section>
 </header>

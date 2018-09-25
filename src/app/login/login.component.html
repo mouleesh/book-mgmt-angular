@@ -1,19 +1,19 @@
-<main class="main-content">
-  <mat-card id="Login">
-    <mat-card-header>
-      <mat-card-title>Welcome to Library Management System</mat-card-title>
-      <mat-card-subtitle>Login to Proceed</mat-card-subtitle>
-    </mat-card-header>
-    <mat-card-content>
-      <form #loginForm="ngForm">
-        <mat-form-field>
-          <input id="username" matInput placeholder="Username" required [(ngModel)]="username" name="username"/>
-        </mat-form-field>
-        <mat-form-field>
-          <input id="password" type="password" matInput placeholder="Password" required [(ngModel)]="password" name="password"/>
-        </mat-form-field>
-        <button type="button" mat-raised-button (click)="onLogin(); loginForm.reset()" [disabled]="!loginForm.valid">Login</button>
-      </form>
-    </mat-card-content>
-  </mat-card>
+<main class="main-content login-block">
+  <div class="container">
+    <div class="row" id="Login">
+      <div class="col-md-5 login-sec">
+        <h2 class="text-center">Login Now</h2>
+        <form #loginForm="ngForm">
+          <mat-form-field>
+            <input id="username" matInput placeholder="Username" required [(ngModel)]="username" name="username" />
+          </mat-form-field>
+          <mat-form-field>
+            <input id="password" type="password" matInput placeholder="Password" required [(ngModel)]="password" name="password" />
+          </mat-form-field>
+          <button type="button" mat-raised-button (click)="onLogin(); loginForm.reset()" [disabled]="!loginForm.valid">Login</button>
+        </form>
+      </div>
+      <div class="col-md-7 banner-sec"></div>
+    </div>
+  </div>
 </main>

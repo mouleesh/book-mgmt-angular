@@ -14,10 +14,11 @@ body {
 }
 
 .main-content {
-  overflow: auto;    
+  overflow: auto;
   position: relative;
-  top: 0;
+  top: 75px;
   bottom: 0;
+  height: calc(100vh - 125px);
 }
 
 #Login > mat-card-header > div.mat-card-header-text {
@@ -43,4 +44,10 @@ button:hover {
 
 .fas{
     cursor: pointer;
+}
+
+@media screen and (max-width: 300px){
+  .main-content{
+    height: auto;
+  }
 }

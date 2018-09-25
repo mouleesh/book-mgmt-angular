@@ -9,9 +9,38 @@
   font-size: 55px;
 }
 
+.book-col {
+  height: calc(100vh - 125px);
+  overflow: auto;
+}
+
+#favBooks {
+  height: 285px;
+}
+
+.allBooksList {
+  height: 80%;
+  overflow: auto;
+}
 @media screen and (max-width: 300px) {
   .fa-plus-circle {
     right: 0;
     left: 5px;
   }
+}
+
+@media screen and (max-width: 576px){
+  #allbooks {
+    height: 340px;
+  }
+
+  .allBooksList {
+    height: 67%;
+    overflow: auto;
+  }
+}
+
+
+.mat-form-field{
+  width: 100%;
 }
