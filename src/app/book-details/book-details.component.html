@@ -1,12 +1,12 @@
-<div class="container book-details-wrapper">
+<div class="main-content container-fluid book-details-wrapper">
     <div class="row">
         <div class="col-md-4">
-            <img src={{imageUrl}} alt="Book Cover Image">
+            <img src={{imageUrl}} class="book-image" alt="Book Cover Image">
         </div>
         <div class="col-md-8">
             <h3>{{bookDetail.bookName}}</h3>
             <p>Author: {{bookDetail.author}}</p>
-            <button (click)="OnLike(bookDetail.bookId)">
+            <button class="btn btn-primary" (click)="OnLike(bookDetail.bookId)">
                 {{isCurrentBookLiked ? "UnLike" : "Like"}} : {{bookDetail.likes}}
             </button>
         </div>
@@ -17,7 +17,7 @@
             <p>{{bookDetail.description}}</p>
         </div>
     </div>
-    
+
     <app-comment [bookId]="bookDetail.bookId" [comments]="bookDetail.comments"></app-comment>
 
 </div>

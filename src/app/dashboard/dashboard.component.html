@@ -2,9 +2,11 @@
     <div class="row">
         <div id="allbooks" class="col-sm-5 book-col">
             <h2>Books In Store</h2>
-            <mat-form-field class="example-full-width">
-                <input [(ngModel)]="searchText" matInput placeholder="Search Books">
-            </mat-form-field>
+            <div id="search-field">
+                <mat-form-field class="example-full-width">
+                    <input [(ngModel)]="searchText" matInput placeholder="Search Books">
+                </mat-form-field>
+            </div>
             <div class="allBooksList">
                 <app-book-list [books]="bookList" [query]="searchText"></app-book-list>
             </div>
@@ -13,7 +15,10 @@
             <div id="favBooks">
                 <app-favourite-book-list [isFavAvail]="isFavAvail" [favBooks]="favouriteBooks"></app-favourite-book-list>
             </div>
-            <p-chart id="analytics-chart" type="horizontalBar" [data]="data" width="55vw" height="40vh"></p-chart>
+            <div>
+                <h2>Analytics</h2>
+                <p-chart id="analytics-chart" type="horizontalBar" [data]="data" [options]="options" width="55vw" height="35vh"></p-chart>
+            </div>
         </div>
     </div>
     <div class="modal fade" id="bookModal" tabIndex="-1" role="dialog" aria-labelledby="addBookModal" aria-hidden="true">

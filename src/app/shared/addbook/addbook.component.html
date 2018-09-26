@@ -9,7 +9,7 @@
   </mat-form-field>
   <mat-form-field>
     <label for="description">Description</label>
-    <input id="description" matInput placeholder="Description" required [(ngModel)]="description" name="description" />
+    <textarea id="description" matInput placeholder="Description" required [(ngModel)]="description" name="description"></textarea>
   </mat-form-field>
   <button type="button" mat-raised-button (click)="addBook(); addBookForm.reset()" [disabled]="!addBookForm.valid">Add Book</button>
 </form>

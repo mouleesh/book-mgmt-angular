@@ -62,8 +62,6 @@ mat-form-field {
 }
 
 .login-block {
-  background: #2b2b2b; /* fallback for old browsers */
-  background: linear-gradient(to bottom, #ecf0f1, #2b2b2b);
   float: left;
   width: 100%;
 }

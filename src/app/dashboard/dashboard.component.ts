@@ -13,6 +13,7 @@ export class DashboardComponent implements OnInit {
   searchText: String;
   bookAnalytics = { names: [], likes: [] };
   data: any;
+  options: any;
   isFavAvail: Boolean;
 
   constructor(
@@ -22,7 +23,6 @@ export class DashboardComponent implements OnInit {
     // All Books
     this.bookList = this.bookService.getAllBooks();
   }
-
   ngOnInit() {
     //User Favourites
     this.favouriteBooks = this.bookService.userFavouritesBooks();
@@ -46,6 +46,32 @@ export class DashboardComponent implements OnInit {
           data: this.bookAnalytics.likes
         }
       ]
+    };
+
+    this.options = {
+      legend: {
+        labels: {
+          fontColor: "white"
+        }
+      },
+      scales: {
+        xAxes: [
+          {
+            ticks: {
+              stepSize: 1,
+              beginAtZero: true,
+              fontColor: "white"
+            }
+          }
+        ],
+        yAxes: [
+          {
+            ticks: {
+              fontColor: "white"
+            }
+          }
+        ]
+      }
     };
   }
 }

@@ -15,13 +15,23 @@
 }
 
 #favBooks {
-  height: 285px;
+  height: calc(47vh - 9vw);
+  min-height: 320px;
 }
 
 .allBooksList {
-  height: 80%;
+  height: 70vh;
+  width: 95%;
+  padding-right: 1%;
+  margin: auto;
+  overflow: hidden;
+  padding-top: 10px;
+}
+
+.allBooksList:hover {
   overflow: auto;
 }
+
 @media screen and (max-width: 300px) {
   .fa-plus-circle {
     right: 0;
@@ -29,18 +39,26 @@
   }
 }
 
-@media screen and (max-width: 576px){
+@media screen and (max-width: 575px) {
   #allbooks {
-    height: 340px;
+    height: calc(57vh - 13vw);
   }
 
   .allBooksList {
-    height: 67%;
-    overflow: auto;
+    height: calc(38vh - 10vw);
   }
 }
 
-
-.mat-form-field{
+.mat-form-field {
   width: 100%;
+}
+
+#search-field {
+  background-color: rgb(236, 240, 241);
+  margin-bottom: 0;
+  padding: 0 5px 0 5px;
+  z-index: 1;
+  width: 100%;
+  border-radius: 10px;
+  box-shadow: 1px 1px 2px rgb(107, 79, 39);
 }

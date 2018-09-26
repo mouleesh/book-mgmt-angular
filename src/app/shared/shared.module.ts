@@ -11,8 +11,8 @@ import { ToastModule } from "primeng/toast";
 import { FavouriteBookListComponent } from "./favourite-book-list/favourite-book-list.component";
 import { FilterPipe } from "../shared/custom-pipes/filter.pipe";
 import { ChartModule } from "primeng/chart";
-import { AddbookComponent } from './addbook/addbook.component';
-import { RoutingModule } from '../routing/routing.module';
+import { AddbookComponent } from "./addbook/addbook.component";
+import { RoutingModule } from "../routing/routing.module";
 
 @NgModule({
   imports: [

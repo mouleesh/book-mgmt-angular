@@ -11,11 +11,15 @@ body {
   box-sizing: border-box;
   min-width: 300px;
   min-height: 500px;
+  -ms-overflow-style: -ms-autohiding-scrollbar;
+  -webkit-overflow-scrolling: touch;
 }
 
 .main-content {
   overflow: auto;
   position: relative;
+  background: #2b2b2b; /* fallback for old browsers */
+  background: linear-gradient(to bottom, #ecf0f1, #2b2b2b);
   top: 75px;
   bottom: 0;
   height: calc(100vh - 125px);
@@ -42,12 +46,15 @@ button:hover {
   color: #60b6c7 !important;
 }
 
-.fas{
-    cursor: pointer;
+.fas {
+  cursor: pointer;
 }
 
-@media screen and (max-width: 300px){
-  .main-content{
+mat-form-field {
+  width: 100%;
+}
+@media screen and (max-width: 300px) {
+  .main-content {
     height: auto;
   }
 }
