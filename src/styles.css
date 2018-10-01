@@ -3497,3 +3497,15 @@ a > code {
   top: 7px;
   right: 15px;
 }
+
+.fa-book {
+  color: #a52a2ac7;
+}
+
+.fa-chart-pie{
+  color: cornflowerblue;
+}
+
+.fa-heart{
+  color: indianred;
+}
