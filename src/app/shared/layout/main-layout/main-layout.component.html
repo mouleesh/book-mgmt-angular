@@ -1,0 +1,38 @@
+<app-header></app-header>
+<p-toast></p-toast>
+<div class="page-content d-flex align-items-stretch"> 
+    <nav class="side-navbar">
+        <div class="sidebar-header d-flex align-items-center">
+          <div class="avatar"><i class="fas fa-user-circle"></i></div>
+          <div class="title">
+            <h1 class="h4">{{fullname}}</h1>
+          </div>
+        </div>
+        <span class="heading">Main</span>
+        <ul class="list-unstyled">
+                  <li routerLinkActive="active"><a routerLink="/en-us/dashboard"> <i class="icon-home"></i>Dashboard </a></li>
+        </ul>
+
+      </nav>
+  <div class="content-inner" style="padding-bottom: 59px;">
+    <!-- Forms Section-->
+    <section class="forms"> 
+      <div class="container-fluid">
+        <router-outlet></router-outlet>
+      </div>
+    </section>
+    <!-- Page Footer-->
+    <footer class="main-footer">
+      <div class="container-fluid">
+        <div class="row">
+          <div class="col-sm-6">
+            <p></p>
+          </div>
+          <div class="col-sm-6 text-right">
+          </div>
+        </div>
+      </div>
+    </footer>
+  </div>
+</div>
+

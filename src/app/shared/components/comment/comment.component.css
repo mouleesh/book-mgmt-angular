@@ -1,0 +1,25 @@
+#comment-textarea{
+    width: 100%;
+    resize: none;
+}
+
+#comment-button{
+    float: right
+}
+
+.comment-card{
+    border-radius:21px;
+    margin-bottom: 10px;
+}
+
+#comment-time{
+    float: right;
+}
+
+textarea {
+    width:100%;
+}
+
+.card{
+    margin-bottom: 0px;
+}

@@ -1,0 +1,11 @@
+
+      <div class="card-header">
+        <h3 class="h4"><i class="fas fa-book"></i>Books</h3>
+      </div>
+      <div class="card-body no-padding">
+        <!-- Item-->
+        <div class="item"  *ngFor="let book of books | filter : query ">
+            <app-book [book]="book"></app-book>
+        </div>
+
+      </div>

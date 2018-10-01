@@ -1,11 +1,10 @@
 import { Injectable } from "@angular/core";
 import { bookDetails, toastData } from "../../../constant";
-import { BookDetail } from "../../modal/book-detail";
 import { Subject } from "rxjs";
-import { Comment } from "../../modal/comment";
 import { UserService } from "../user/user.service";
 import { Router } from "@angular/router";
 import { MessageService } from "primeng/api";
+import { BookDetail } from "@shared/models/book-detail";
 
 /** Service for Book Related Queries */
 @Injectable({

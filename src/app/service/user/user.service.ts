@@ -46,6 +46,18 @@ export class UserService {
     }
   }
 
+  public getUserDetails = () => {
+    if (this.checkUser(this.logged)) {
+      let userDetails = this.userDetailsList.filter((user) => {
+        return user.username.toLowerCase() === this.logged.toLowerCase();
+      })[0];  // this is an IE fix
+
+      return userDetails.fullName;
+    }else {
+      return 
+    }
+  }
+
   /**
    * LogOut function.
    */

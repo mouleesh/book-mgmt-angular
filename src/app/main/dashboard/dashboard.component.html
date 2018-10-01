@@ -1,0 +1,100 @@
+<!-- <div class=" col-lg-6 col-12">
+        <div class="line-chart bg-white d-flex align-items-center justify-content-center has-shadow" >
+                <p-chart id="analytics-chart" type="horizontalBar" [data]="data" [options]="options" width="400px" height="400px"></p-chart>  
+        </div>
+</div> -->
+
+
+<div class="col-lg-12">
+    <div class="daily-feeds card">
+        <div class="card-close">
+        </div>
+        <div class="card-header">
+            <h3 class="h4"><i class="fas fa-chart-pie" ></i>Analytics</h3>
+        </div>
+        <div class="card-body no-padding">
+            <div class="line-chart bg-white d-flex align-items-center justify-content-center has-shadow">
+                <p-chart id="analytics-chart" type="horizontalBar" [data]="data" [options]="options" width="700px"
+                    height="400px"></p-chart>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+
+
+
+<div class="col-lg-12">
+    <div class="daily-feeds card">
+        <div class="card-close-search">
+            <div class="form-group">
+                <div class="input-group">
+                    <div class="input-group-prepend"><span class="input-group-text"><i class="fas fa-search"></i></span></div>
+                    <input type="text" placeholder="Search" class="form-control" [(ngModel)]="searchText">
+                </div>
+            </div>
+        </div>
+        <app-book-list [books]="bookList" [query]="searchText"></app-book-list>
+    </div>
+</div>
+<div class="col-lg-12">
+        <div class="daily-feeds card"> 
+<app-favourite-book-list [isFavAvail]="isFavAvail" [favBooks]="favouriteBooks"></app-favourite-book-list>
+        </div></div>
+<div class="modal fade" id="bookModal" tabIndex="-1" role="dialog" aria-labelledby="addBookModal" aria-hidden="true">
+    <p-toast></p-toast>
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            <div class="modal-header heading">
+                <h5 class="modal-title" id="addBookModal">Add Book</h5>
+            </div>
+            <div class="modal-body">
+                <app-addbook></app-addbook>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+            </div>
+        </div>
+    </div>
+</div>
+<i class="fas fa-plus-circle" data-toggle="modal" data-target="#bookModal"></i>
+<!-- <div class="container-fluid main-content">
+    <div class="row">
+        <div id="allbooks" class="col-sm-5 book-col">
+            <h2>Books In Store</h2>
+            <div id="search-field">
+                    <input [(ngModel)]="searchText"  placeholder="Search Books">
+            </div>
+            <div class="allBooksList">
+                
+            </div>
+        </div>
+        <div class="col-sm-7 book-col">
+            <div id="favBooks">
+                <app-favourite-book-list [isFavAvail]="isFavAvail" [favBooks]="favouriteBooks"></app-favourite-book-list>
+            </div>
+            <div>
+                <h2>Analytics</h2>
+                <p-chart id="analytics-chart" type="horizontalBar" [data]="data" [options]="options" width="55vw" height="35vh"></p-chart>
+            </div>
+        </div>
+    </div>
+    <div class="modal fade" id="bookModal" tabIndex="-1" role="dialog" aria-labelledby="addBookModal" aria-hidden="true">
+        <p-toast></p-toast>
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+                <div class="modal-header heading">
+                    <h5 class="modal-title" id="addBookModal">Add Book</h5>
+                </div>
+                <div class="modal-body">
+                    <app-addbook></app-addbook>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                </div>
+            </div>
+        </div>
+    </div>
+    <i class="fas fa-plus-circle" data-toggle="modal" data-target="#bookModal"></i>
+</div> -->

@@ -1,31 +1,24 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
+import { AppRoutingModule, routedComponents } from './app.routing.module';
 import { AppComponent } from './app.component';
-import { UserService } from './service/user/user.service';
-import { BookService } from './service/book/book.service';
+import { LayoutModule } from '@shared/layout/layout.module';
 import { AuthGuardService } from './service/auth/auth-guard.service';
-import { SharedModule } from './shared/shared.module';
-import { LoginComponent } from './login/login.component';
-import { DashboardComponent } from './dashboard/dashboard.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
-import { MessageService } from 'primeng/api';
-import { BookDetailsComponent } from './book-details/book-details.component';
-import { CommentComponent } from './comment/comment.component';
+
 
 @NgModule({
   declarations: [
     AppComponent,
-    LoginComponent,
-    DashboardComponent,
-    BookDetailsComponent,
-    CommentComponent
+    routedComponents
   ],
   imports: [
-    BrowserModule,
-    SharedModule,
-    BrowserAnimationsModule
+    BrowserAnimationsModule,
+    AppRoutingModule,
+    LayoutModule,
+    BrowserAnimationsModule 
   ],
-  providers: [UserService, BookService, MessageService, AuthGuardService],
+  providers: [AuthGuardService],
   bootstrap: [AppComponent]
 })
 /**Root Module*/

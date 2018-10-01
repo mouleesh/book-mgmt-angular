@@ -1,0 +1,16 @@
+
+          <div class="card-header">
+            <h3 class="h4"><i class="fas fa-heart"></i>Favourite Books</h3>
+          </div>
+          <div class="card-body no-padding">
+            <!-- Item-->
+            <div class="favList" *ngIf="isFavAvail;else elseBlock"> 
+                <div class="item"  *ngFor="let book of favBooks">
+                    <app-book [book]="book"></app-book>
+                </div>
+            </div>
+            <ng-template #elseBlock>
+                    <div class="item"><small>No Books Added Yet!</small></div>
+                
+            </ng-template>
+          </div>

@@ -1,0 +1,30 @@
+<!-- <mat-card class="book-card">
+  <mat-card-header>
+    <mat-card-title>{{book.bookName}}</mat-card-title>
+    <mat-card-subtitle>{{book.author}}</mat-card-subtitle>
+  </mat-card-header>
+  <mat-card-content>
+    <p>
+      {{book.description}}
+    </p>
+  </mat-card-content>
+  <mat-card-actions>
+    <a routerLink="/book-details/{{book.bookId}}">
+      <button mat-button>Read More..</button>
+    </a>
+  </mat-card-actions>
+</mat-card>
+ -->
+
+ <div class="item clearfix">
+    <div class="feed d-flex justify-content-between">
+      <div class="feed-body d-flex justify-content-between">
+        <div class="content">
+          <h5>{{book.bookName}}</h5>
+          <div class="full-date"><small>{{book.author}}</small></div>
+        </div>
+      </div>
+    </div>
+    <small>{{book.description}}</small>
+    <div class="CTAs pull-right"><a routerLink="/en-us/book-details/{{book.bookId}}" class="btn btn-sm btn-info">Read More</a></div>
+  </div>
