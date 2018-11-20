@@ -10,3 +10,5 @@
   </div><button id="login" (click)="onLogin(); loginForm.reset()" [disabled]="!loginForm.valid" class="btn btn-primary">Login</button>
 </form>
 <!-- <a href="javascript:void(0)" class="forgot-pass">Forgot Password?</a> -->
+
+<app-pagination (onPageChange)="onPageChange($event)" totalItemsCount=90 itemsPerPage=10></app-pagination>

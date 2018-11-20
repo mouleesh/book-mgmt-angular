@@ -4,6 +4,7 @@ import { AuthRoutingModule } from '@auth/auth.routing.module';
 import { LoginComponent } from '@auth/login/login.component';
 import { FormsModule } from '@angular/forms';
 import { MessageService } from 'primeng/api';
+import { PaginationComponent } from '@shared/components/pagination/pagination.component';
 
 @NgModule({
   imports: [
@@ -11,7 +12,7 @@ import { MessageService } from 'primeng/api';
     FormsModule,
     AuthRoutingModule
   ],
-  declarations: [LoginComponent],
+  declarations: [LoginComponent, PaginationComponent],
   providers: [MessageService]
 })
 export class AuthModule { }

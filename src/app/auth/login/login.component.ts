@@ -35,6 +35,10 @@ export class LoginComponent {
     }
   }
 
+  onPageChange(eve) {
+    console.log(eve)
+  }
+
   /**Actions to happen when login is success */
   private loginSuccess() {
     this.router.navigateByUrl("/en-us/dashboard");

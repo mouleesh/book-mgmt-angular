@@ -1,0 +1,21 @@
+<h1>Pagination</h1>
+
+<ul>
+    <a href="#" id="pg-first-page" (click)="pageClick(pageNumberArray[0])">
+        <li> << </li>
+    </a>
+    <a href="#" id="pg-prev-page" ng-class="{'pg-nav-disable': currentPage <= 1}" (click)="pageClick(currentPage-1)">
+        <li> < </li>
+    </a>
+    <a href="#" *ngFor="let pageNumber of pageNumberArray" (click)="pageClick(pageNumber)">
+        <li>
+            {{ pageNumber }}
+        </li>
+    </a>
+    <a href="#" id="pg-next-page" (click)="pageClick(currentPage+1)">
+        <li> > </li>
+    </a>
+    <a href="#" id="pg-last-page" (click)="pageClick(pageNumberArray.length)">
+        <li> >> </li>
+    </a>
+</ul>
