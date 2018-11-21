@@ -13,3 +13,14 @@ a:not(:last-child) li {
 li:hover {
     background-color: azure;
 }
+
+li.pg-current-page {
+    background-color: rgb(80, 162, 238);
+    color: white;
+}
+
+a.pg-nav-disable {
+    color: gray;
+    cursor: not-allowed;
+    text-decoration: underline;
+}

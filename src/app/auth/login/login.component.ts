@@ -36,7 +36,7 @@ export class LoginComponent {
   }
 
   onPageChange(eve) {
-    console.log(eve)
+    // console.log(eve)
   }
 
   /**Actions to happen when login is success */
